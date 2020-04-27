@@ -1,0 +1,61 @@
+//https://codeforces.com/contest/1157/problem/C1
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    int i,j,min=0;
+    int a[n];
+    for(i=0;i<n;i++)
+    cin>>a[i];
+    string s;
+    i=0;j=n-1;
+    while(i!=j)
+    {
+        if(min<a[i] && min<a[j])
+        {
+            if(a[i]<a[j])
+        {
+            s.push_back('L');
+           
+            min=a[i];
+             i++;
+            // l++;
+        }
+        else if(a[j]<a[i])
+        {
+            s.push_back('R');
+           
+            min=a[j];
+             j--;
+            // l++;
+        }
+       
+            
+        }
+        else if(a[i]<min && a[j]>min)
+        {
+           s.push_back('R');
+           
+            min=a[j];
+             j--;  
+        }
+        else if(a[i]>min && a[j]<min)
+        {
+            s.push_back('L');
+           
+            min=a[i];
+             i++;
+        }
+        else
+        break;
+    }
+    if(i==j && min<a[i])
+    {
+        s.push_back('L');
+    }
+    cout<<s.length()<<endl;
+    //for(i=0;i<s.length();i++)
+    cout<<s;
+}
