@@ -1,0 +1,21 @@
+//https://codeforces.com/problemset/problem/102/B
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+	string s;
+	cin>>s;
+	int len=s.length(),ans=0,i,sum;
+	while(len>1)
+	{
+		sum=0;
+		for(i=0;i<len;i++)
+		sum+=s[i]-'0';
+		s=to_string(sum);
+		len=s.length();
+		ans++;
+	}
+	cout<<ans<<endl;
+	return 0;
+}
