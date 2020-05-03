@@ -1,0 +1,48 @@
+//https://codeforces.com/contest/1165/problem/C
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n;
+    cin>>n;
+    string s;
+    cin>>s;
+   // int len=sizeof(s);
+    int i,count=1,flag=0;
+        count=0;
+        int m=0,j=0;
+        int len=s.length();
+        for(i=0;i<len;i++)
+        {
+            if(s[j]==s[j+1])
+            {
+                s.erase(j,1);
+                
+                m++;
+                flag++;
+            }
+            else
+            j=j+2;
+        }
+    
+    int size=s.length();
+    if(size==1)
+    {
+        cout<<flag+1<<endl;
+        cout<<" "<<endl;
+    }
+    else if(size%2==0)
+    {
+        cout<<flag<<endl;
+        cout<<s<<endl;
+    }
+    else
+    {
+        cout<<flag+1<<endl;
+        int k=size-1;
+       s.erase(k,1);
+        cout<<s<<endl;
+    }
+	// your code goes here
+	return 0;
+}
